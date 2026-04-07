@@ -1,0 +1,38 @@
+package org.example.controller;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+public class MainController {
+
+    @FXML
+    TextField txtNum1, txtNum2;
+    @FXML
+    Button btnSumar, btnRestar;
+
+    @FXML
+    Label txtResult;
+
+    @FXML
+    public void initialize() {
+        btnRestar.getStyleClass().setAll("btn", "btn-danger");
+
+        btnSumar.setOnAction(e -> {
+            Double result =Double.parseDouble(txtNum1.getText())+Double.parseDouble(txtNum2.getText());
+            txtResult.setText(String.valueOf(result));
+
+        });
+    }
+
+    @FXML
+    public void btnRestar(ActionEvent event) {
+        Double result =Double.parseDouble(txtNum1.getText())-Double.parseDouble(txtNum2.getText());
+        txtResult.setText(String.valueOf(result));
+
+
+
+    }
+}
